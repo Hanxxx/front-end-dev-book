@@ -1,0 +1,137 @@
+html, body {
+  height: 100%;
+}
+
+body{
+  font-size: 15px;
+  background: rgb(148, 222, 222);
+  display: flex;
+  flex-direction: column;
+}
+
+a[href]{
+  text-decoration: none;
+}
+
+.main-header {
+  flex: 0 1 auto;
+}
+
+.logo-text {
+  background: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.main-content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.thumbnail-list {
+  flex: 0 1 auto;
+  order: 2;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 20px, 0;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.thumbnail-item {
+  border: 1px solid rgb(100%, 100%, 100%);
+  border: 3px solid rgba(100%, 100%, 100%, 0.5);
+  display: inline-block;
+  min-width: 120px;
+  max-width: 120px;
+
+  transition: transform 133ms;
+}
+
+.thumbnail-item:hover {
+  transform: scale(1.2);
+}
+
+.thumbnail-title {
+  display: block;
+  margin: 0;
+  padding: 4px 10px;
+  background: rgb(96, 125, 139);
+  color: rgb(202, 238, 255);
+  font-size: 20px;
+  text-align: center;
+}
+
+.thumbnail-image{
+  width: 100%;
+  display: block;
+}
+
+.detail-image-container {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-image-frame {
+  position: relative;
+  text-align: center;
+  transition: transform 3333ms;
+}
+
+.is-tiny {
+  transform: scale(0.001);
+  transition: transform 0ms;
+}
+
+.detail-image {
+  width: 90%;
+}
+
+.detail-image-title {
+  position: absolute;
+  bottom: -13px;
+  left: 10px;
+  color: white;
+  text-shadow: rgba(0, 0, 0, 0.9) -1px -2px 8px;
+  font-size: 40px;
+}
+
+.hidden-detail .detail-image-container {
+  display: none;
+}
+
+.hidden-detail .thumbnail-list {
+  align-items: center;
+  flex-direction: column;
+}
+
+.hidden-detail .thumbnail-item {
+  max-width: 80%;
+  min-width: 80%;
+}
+
+@media all and (min-width: 768px) {
+  .main-content {
+    flex-direction: row;
+    overflow: hidden;
+  }
+  .thumbnail-list {
+    padding: 35px;
+    flex-direction: column;
+    order: 0;
+    margin-left: 20px;
+  }
+
+  .thumbnail-item {
+    max-width: 260px;
+  }
+
+  .thumbnail-item + .thumbnail-item {
+    margin-top: 20px;
+  }
+}
